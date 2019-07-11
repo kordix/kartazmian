@@ -14,6 +14,7 @@ class KartaController extends Controller
      */
     public function index()
     {
+      // dd(Karta::find(1)->updated_at);
       $karty=Karta::all();
       return view('karta.index',compact('karty'));
     }
@@ -77,6 +78,7 @@ class KartaController extends Controller
      Karta::find($id)->update($request->all());
      session()->flash('message','zedytowano');
      return back();
+     // return redirect()->route('main');
     }
 
     /**
@@ -91,4 +93,6 @@ class KartaController extends Controller
         session()->flash('message','usunięto');
         return back();
     }
+
+
 }

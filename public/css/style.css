@@ -1,0 +1,17 @@
+.red{
+color:var(--red);
+}
+
+.green{
+  color:var(--green);
+
+}
+
+
+table {
+    table-layout: auto !important;
+    /* word-wrap: break-word; */
+    max-width:130%;
+/* white-space:nowrap; */
+width:1300px;
+}

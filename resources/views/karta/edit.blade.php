@@ -4,7 +4,7 @@
 
   <div class="container">
     <div class="col-md-8">
-     <h1 style="font-size:1.6em;text-align:center">Dodaj kartę zmian</h1>
+     <h1 style="font-size:1.6em;text-align:center">Edytuj kartę zmian</h1>
     <form class="" action="{{route('karta.update',$karta->id)}}" method="post">
       {{csrf_field()}}
       {{method_field('PATCH')}}
@@ -88,14 +88,23 @@
       <label for="status">Status:</label>
       <select  name="status" style="width:150px">
         <option value="Rozpoczęte">Rozpoczęte</option>
+        <option value="W trakcie" @if($karta->status=="W trakcie")selected @endif>W trakcie</option>
+        <option value="Do zatwierdzenia" @if($karta->status=="Do zatwierdzenia")selected @endif>Do zatwierdzenia</option>
+        <option value="Gotowe" @if($karta->status=="Gotowe")selected @endif>Gotowe</option>
       </select>
     </div>
     <div class="form-group">
-
+      <label for="">Data rozpoczęcia:</label>
+      <input type="date" name="data_start" value="{{$karta->data_start}}">
+    <label for="">Data zakończenia:</label>
+    <input type="date" name="data_end" value="{{$karta->data_end}}">
     <button type="submit"  class="btn btn-primary">Zapisz</button>
+
   </div>
 
     </form>
+    <a href="{{route('karta.edit', $karta->id+1)}}"> <button type="submit"  class="btn btn-secondary ml-auto">Next</button></a>
+
   </div>
 
   </div>

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'KartaController@index')->name('main');
 
 Auth::routes();
 

@@ -14,7 +14,7 @@
     </div>
     <div class="form-group">
       <label for="owner">Przyjmujący</label>
-      <select class="" name="">
+      <select class="" name="owner">
         <option value="KBOBER">KBOBER</option>
         <option value="MLOBOCKI">MLOBOCKI</option>
         <option value="RCIROCKI">RCIROCKI</option>
