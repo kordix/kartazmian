@@ -12,6 +12,10 @@ class KartaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+      $this->middleware('auth');
+    }
+
     public function index()
     {
       // dd(Karta::find(1)->updated_at);
